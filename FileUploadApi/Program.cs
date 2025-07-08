@@ -1,4 +1,4 @@
-using FileUploadApi.Entities;
+﻿using FileUploadApi.Entities;
 using FileUploadApi.Interfaces;
 using FileUploadApi.Services;
 using Microsoft.EntityFrameworkCore;
@@ -25,7 +25,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<SocialDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("SocialDbConnectionString")));
+builder.Services.AddDbContext<SocialDbContext>(options => 
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SocialDbConnectionString")));
 
 builder.Services.AddTransient<IPostService, PostService>();
 
